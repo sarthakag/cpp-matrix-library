@@ -14,7 +14,7 @@ public:
 	using value_type = T;
 	vector<vector<T> >mat;
 	size_t row_size, col_size;
-	//Constructors
+	// Constructors
 	matrix ();
 	matrix (const size_t row_size, const size_t col_size);
 	// matrix (const matrix &M); 
@@ -59,7 +59,8 @@ public:
 	void show();
 
 }; 
-// ADD
+
+// Matrix Addition using Expression Templates
 template <typename LHS, typename RHS>
 class matrixSum
 {
@@ -79,7 +80,8 @@ template <typename LHS, typename RHS>
 matrixSum<LHS, RHS> operator+(const LHS& lhs, const RHS& rhs) {
 	return matrixSum<LHS, RHS>(lhs, rhs);
 }
-// SUB
+
+// Matrix Substraction using Expression Templates
 template <typename LHS, typename RHS>
 class matrixSub
 {
@@ -180,6 +182,7 @@ size_t matrix<T>:: csize()
 	return col_size;
 }
 
+// Prints all values in matrix
 template <class T> 
 void show(matrix<T> &M) {
 	for(size_t i = 0; i < M.row_size ; i++) {
@@ -188,10 +191,5 @@ void show(matrix<T> &M) {
 		cout << endl;
 	}
 }
-
-
-
-
-
 
 #endif
