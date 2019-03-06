@@ -20,7 +20,7 @@ void showall()
 
 }
 /*
-	Prints time after each operator
+	Prints time after each operation
 */
 void ShowSetTime(string s)
 {

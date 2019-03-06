@@ -19,8 +19,8 @@ public:
 	matrix (const size_t row_size, const size_t col_size);
 	// matrix (const matrix &M); 
 
-	T get(const std::size_t row_num,const std::size_t col_num);
-	T set(const std::size_t row_num,const std::size_t col_num, T val);
+	T get(const size_t row_num,const size_t col_num);
+	T set(const size_t row_num,const size_t col_num, T val);
 	const T& operator()(size_t x, size_t y) const { return mat[x][y]; }
 	T& operator()(size_t x, size_t y) { return mat[x][y]; }
 
@@ -30,8 +30,8 @@ public:
 
 	template <typename E>
 	matrix<T>& operator=(const E& expression) {
-		for (std::size_t i = 0; i != row_size; i++) {
-			for (std::size_t j = 0; j != col_size; j++) {
+		for (size_t i = 0; i != row_size; i++) {
+			for (size_t j = 0; j != col_size; j++) {
 				mat[i][j] = expression(i, j);
 			}
 		}
@@ -39,8 +39,8 @@ public:
 	}
 	template <typename E>
 	matrix<T>& operator+=(const E& expression) {
-		for (std::size_t i = 0; i != row_size; i++) {
-			for (std::size_t j = 0; j != col_size; j++) {
+		for (size_t i = 0; i != row_size; i++) {
+			for (size_t j = 0; j != col_size; j++) {
 				mat[i][j] = mat[i][j] + expression(i, j);
 			}
 		}
@@ -48,8 +48,8 @@ public:
 	}
 	template <typename E>
 	matrix<T>& operator-=(const E& expression) {
-		for (std::size_t i = 0; i != row_size; i++) {
-			for (std::size_t j = 0; j != col_size; j++) {
+		for (size_t i = 0; i != row_size; i++) {
+			for (size_t j = 0; j != col_size; j++) {
 				mat[i][j] -= expression(i, j);
 			}
 		}
@@ -153,13 +153,13 @@ matrix<T>::matrix (const size_t row_sz, const size_t col_sz)
 }
 
 template <class T>
-T matrix<T>:: get(const std::size_t row_num,const std::size_t col_num)
+T matrix<T>:: get(const size_t row_num,const size_t col_num)
 {
 	return mat[row_num][col_num];
 }
 
 template <class T>
-T matrix<T>:: set(const std::size_t row_num,const std::size_t col_num, T val)
+T matrix<T>:: set(const size_t row_num,const size_t col_num, T val)
 {
 	return mat[row_num][col_num] = val;
 }
